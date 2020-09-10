@@ -1,0 +1,36 @@
+Algoritmo "calculo da nota unisc"
+// Descrição   : Calcular as notas Faculdade
+// Autor(a)    : Jean Pires
+// Data atual  : 01/09/2020
+Var
+resultado : caractere
+soma : real
+nota_prova, nota_aula : real
+media1, media2 : real
+
+Inicio
+escreval("Olá, Vamos calcular suas notas!")
+escreva("Quanto Voce tirou nas Aulas? ")
+leia (nota_aula)
+escreva("Quanto Voce tirou na Prova? ")
+leia (nota_prova)
+
+media1 <- (nota_aula*4/10)
+media2 <- (nota_prova*6/10)
+
+escreval ("Sua nota nas Aulas foi: ", media1)
+escreval ("Sua nota na Prova foi: ", media2)
+soma <- (media1+media2)
+
+escreval ("Sua Nota final foi: ", soma)
+se (soma >= 7) entao
+resultado <- "Aprovado"
+escreval ("Resultado: ", resultado)
+escreval("Parabéns, Boa Sorte no Próximo semestre!")
+senao
+resultado <- "Reprovado"
+escreval ("Resultado: ", resultado)
+escreval ("Ficou no exame, estude mais.")
+fimse
+
+  Fimalgoritmo
