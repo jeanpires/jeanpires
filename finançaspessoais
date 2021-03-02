@@ -1,0 +1,65 @@
+agua=0; luz=0; internet=0; gasolina=0; saude=0; mercado=0; outros=0
+carteira=0; gasto=0; total=0
+totalcarteira=0; totalagua=0; totalluz=0; totalinternet=0
+totalgasolina=0; totalsaude=0; totalmercado=0; totaloutros=0
+saldo=0;
+
+print('Bem Vindo ao Finanças Pessoais')
+nome = input('Qual seu nome? ')
+print('Muito Pazer,', nome+'!')
+print('Digite a opção desejada', nome+'.')
+
+while True:
+    opção = int(input('1-Adicionar saldo a carteira, 2-Adicionar gastos, 3-Verificar Gastos, 4-Verificar Carteira, 5-Sair: '))
+
+    if opção == 1:
+        carteira = float(input('Informe o Saldo a ser Adicionado na carteira: '))
+        totalcarteira = totalcarteira+carteira
+    elif opção == 2:
+        print('Escolha a Opção desejada:')
+        while True:
+            opção = int(input('1-Luz, 2-Água, 3-Internet, 4-Gasolina, 5-Mercado, 6-Saúde, 7-Outros, 8-Voltar: '))
+            if opção == 1:
+                luz = float(input('Informe o Valor de sua Luz: '))
+                totalluz = totalluz+luz
+            elif opção == 2:
+                agua = float(input('Informe o Valor de sua Água: '))
+                totalagua = totalagua+agua
+            elif opção == 3:
+                internet = float(input('Informe o Valor de sua Internet: '))
+                totalinternet = totalinternet+internet
+            elif opção == 4:
+                gasolina = float(input('Informe o Valor de sua Gasolina: '))
+                totalgasolina = totalgasolina+gasolina
+            elif opção == 5:
+                mercado = float(input('Informe o Valor de seu Mercado: '))
+                totalmercado = totalmercado+mercado
+            elif opção == 6:
+                saúde = float(input('Informe o Valor do Plano Saúde: '))
+                totalsaude = totalsaude+saude
+            elif opção == 7:
+                outros = float(input('Informe o Valor de Outros: '))
+                totaloutros = totaloutros+outros
+            elif opção == 8:
+                break
+            else:
+                print("Opção inválida. Selecione a Opção desejada:")
+    elif opção == 3:
+        print('O Total de Gastos é: ', totalluz+totalagua+totalinternet+totalgasolina+totalsaude+totalmercado+totaloutros)
+        print('Luz: ', totalluz)
+        print('Água: ', totalagua)
+        print('Intenet: ', totalinternet)
+        print('Gasolina: ', totalgasolina)
+        print('Saúde: ', totalsaude)
+        print('Mercado: ', totalmercado)
+        print('Outros: ', totaloutros)
+    elif opção == 4:
+        saldo = totalcarteira - (
+                    totalluz + totalagua + totalinternet + totalgasolina + totalsaude + totalmercado + totaloutros)
+        print('O Saldo da Carteira é: ', saldo)
+
+    elif opção == 5:
+        print('Muito Obrigado', nome, 'Por usar o Finanças Pessoais. Até Logo! ')
+        break
+    else:
+        print("Opção inválida. Selecione a Opção desejada:")
